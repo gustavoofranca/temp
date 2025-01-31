@@ -1,0 +1,219 @@
+// Estilos base
+.menu-content {
+  padding: 2rem 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.search-bar {
+  margin: 1.5rem auto;
+  max-width: 600px;
+  padding: 0 1rem;
+  
+  input {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #2a2a2a;
+    color: #f5f5f5;
+    font-size: 1rem;
+    
+    &::placeholder {
+      color: #888;
+    }
+    
+    &:focus {
+      outline: 2px solid #e84c3d;
+    }
+  }
+}
+
+.menu-section {
+  margin-bottom: 3rem;
+  background: #222;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+
+  &.featured {
+    background: linear-gradient(45deg, #1a1a1a, #2d1f1f);
+    border: 2px solid #e84c3d;
+    
+    h2 {
+      color: #e84c3d;
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      
+      &::after {
+        width: 80px;
+      }
+    }
+  }
+
+  h2 {
+    color: #e84c3d;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #e84c3d;
+      margin: 0.8rem auto 0;
+      border-radius: 2px;
+    }
+  }
+}
+
+// Grid responsivo para todos os tipos de cards
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+// Cards responsivos
+.menu-item {
+  background: #2a2a2a;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+
+    img {
+      transform: scale(1.05);
+    }
+  }
+
+  img {
+    width: 100%;
+    height: clamp(180px, 30vw, 200px);
+    object-fit: cover;
+    border-bottom: 3px solid #e84c3d;
+    transition: transform 0.3s ease;
+  }
+
+  .menu-item-content {
+    padding: clamp(1rem, 3vw, 1.5rem);
+    position: relative;
+    z-index: 1;
+
+    h3 {
+      color: #e84c3d;
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    .description {
+      color: #b3b3b3;
+      margin-bottom: 1.2rem;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+      line-height: 1.6;
+    }
+
+    .item-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      .price {
+        color: #fff;
+        font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+        font-weight: 600;
+      }
+
+      .add-to-cart {
+        background: #e84c3d;
+        color: #fff;
+        border: none;
+        padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1.2rem, 3vw, 1.5rem);
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: #d44233;
+          transform: translateY(-2px);
+        }
+
+        i {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+// Media queries específicas
+@media (max-width: 768px) {
+  .menu-section {
+    padding: 1.5rem 1rem;
+    margin-bottom: 2rem;
+
+    &.sides .menu-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .menu-item {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .menu-section {
+    &.sides .menu-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-content {
+    padding: 1rem;
+  }
+
+  .menu-section {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+
+    h2 {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .menu-item .menu-item-content {
+    padding: 1rem;
+
+    .item-footer {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.8rem;
+
+      .add-to-cart {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}
