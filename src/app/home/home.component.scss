@@ -1,0 +1,122 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZW81dGlidmx3NTRwMGdxMnNybjlyMzVvZGhjdTVtaXB6b2MwNHBhZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IzNq7U7mX0ecLvNKh0/giphy.gif');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  min-width: 200px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #e65100;
+  color: white;
+  border: 2px solid #e65100;
+}
+
+.btn-primary:hover {
+  background-color: #ff6f00;
+  border-color: #ff6f00;
+}
+
+.btn-transparent {
+  background-color: transparent;
+  color: white;
+  border: 2px solid #fff;
+}
+
+.btn-transparent:hover {
+  background-color: #e65100;
+  color: white;
+  border-color: #e65100;
+}
+
+.footer {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.opening-hours {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
+  color: #e65100;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}

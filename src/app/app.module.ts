@@ -25,16 +25,6 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { SaibaMaisComponent } from './saiba-mais/saiba-mais.component';
 import { AboutComponent } from './components/about/about.component';
 
-// Services
-import { AuthService } from './services/auth.service';
-import { CartService } from './services/cart.service';
-import { OrderService } from './services/order.service';
-import { ProductService } from './services/product.service';
-import { InventoryService } from './services/inventory.service';
-
-// Guards
-import { AdminGuard } from './guards/admin.guard';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,14 +51,7 @@ import { AdminGuard } from './guards/admin.guard';
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage())
   ],
-  providers: [
-    AuthService,
-    CartService,
-    OrderService,
-    ProductService,
-    InventoryService,
-    AdminGuard
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
